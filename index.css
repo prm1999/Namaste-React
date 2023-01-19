@@ -27,3 +27,6 @@
 .card>img{
       width: 100%;
 }
+.resurantlist{
+      display: flex;
+}
