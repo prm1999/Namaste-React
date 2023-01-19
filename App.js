@@ -1181,13 +1181,14 @@ const data=[
 
     ]
 
-const ResturantCard=()=>{
+const ResturantCard=(props)=>{
     return (
         <div className="card">
-        <img src={data.image} alt="image"/>
-        <h2>{data[0].data?.name}</h2>
-        <h3>{data[0].data?.cuisines.join(",")}</h3>
-        <h4>{data[0].data?.minDeliveryTime} minutes star</h4>
+        <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+
+        props.data.data?.cloudinaryImageId} alt="image"/>
+        <h2>{props.data.data?.name}</h2>
+        <h3>{props.data.data?.cuisines.join(",")}</h3>
+        <h4>{props.data.data?.minDeliveryTime} minutes star</h4>
         </div>
     )
 }
@@ -1222,8 +1223,13 @@ const Header=()=>{
 
 function Body() {
     return (
-<div>
-    <ResturantCard/>
+<div className="resurantlist">
+    <ResturantCard data={data[0]}/>
+    <ResturantCard data={data[1]}/>
+    <ResturantCard data={data[2]}/>
+    <ResturantCard data={data[3]}/>
+    <ResturantCard data={data[4]}/>
+    <ResturantCard data={data[5]}/>
 </div>    );
 }
 
