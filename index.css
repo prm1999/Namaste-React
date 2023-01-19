@@ -16,3 +16,14 @@
 .logo{
       width: 100px;
 }
+
+
+.card{
+      width:200px;
+      border: 10px solid violet;
+      padding: 10 px;
+      margin: 10px;
+}
+.card>img{
+      width: 100%;
+}

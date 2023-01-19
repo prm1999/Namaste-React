@@ -37,11 +37,33 @@ const Title=()=>(
         //     Food Villa
         // </h1>
 )
-    
+
+const data={
+    name:"Chennai Khulfi",
+    image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qtgzppficebfv25jsnbl",
+    cusine:"Dessert",
+    rating:"4.5"
+}
+
+const ResturantCard=()=>{
+    return (
+        <div className="card">
+        <img src={data.image} alt="image"/>
+        <h2>{data.name}</h2>
+        <h3>{data.cusine}</h3>
+        <h4>{data.rating} star</h4>
+        </div>
+    )
+}
 
 
 
-const HeaderComponent=()=>{
+
+
+
+
+
+const Header=()=>{
     return(
         <div className="header">
            <Title/>
@@ -60,19 +82,13 @@ const HeaderComponent=()=>{
 // React Fragment is a component exprted in react
 // JXS has only one parent
 
-const jxs=(
-    <React.Fragment>
-        <h1> Hii Fragment</h1>
-        <h2> Single Parent</h2>
-    </React.Fragment>
-);
 
-// 
 
 function Body() {
     return (
-        <h1> Body</h1>
-    );
+<div>
+    <ResturantCard/>
+</div>    );
 }
 
 const Footer=()=>{
@@ -87,10 +103,12 @@ const Footer=()=>{
 
 const AppLayout=()=>{
     return(
+        <React.Fragment>
         <Header/>
         <Body/>
-        <footer/>
+        <Footer/>
+        </React.Fragment>
     )
 }
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderComponent/>);
+root.render(<AppLayout/>);
