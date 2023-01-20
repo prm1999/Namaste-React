@@ -22,10 +22,17 @@ function Body() {
         }}
         />
                 <h1>{searchClicked}</h1>
-
+{/* onclick change */}
            <button className="search-btn"
            onClick={()=>{
+            if (searchClicked==="true")
+            {
+                setsearchClicked("false")
+            }
+            else
+           {
             setsearchClicked("true");
+           }
            }}
            
            >search</button>
