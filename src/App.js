@@ -38,7 +38,7 @@ const Title=()=>(
         // </h1>
 )
 
-const data=[
+const returant_list=[
     {
         "type": "restaurant",
         "data": {
@@ -1181,14 +1181,17 @@ const data=[
 
     ]
 
-const ResturantCard=(props)=>{
+const ResturantCard=({
+    name,cuisines,cloudinaryImageId,minDeliveryTime,
+})=>{
+    // const {name,cuisines,cloudinaryImageId,minDeliveryTime}=data.data;
     return (
         <div className="card">
         <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+
-        props.data.data?.cloudinaryImageId} alt="image"/>
-        <h2>{props.data.data?.name}</h2>
-        <h3>{props.data.data?.cuisines.join(",")}</h3>
-        <h4>{props.data.data?.minDeliveryTime} minutes star</h4>
+       cloudinaryImageId} alt="image"/>
+        <h2>{name}</h2>
+        <h3>{cuisines}</h3>
+        <h4>{minDeliveryTime} minutes star</h4>
         </div>
     )
 }
@@ -1224,12 +1227,20 @@ const Header=()=>{
 function Body() {
     return (
 <div className="resurantlist">
-    <ResturantCard data={data[0]}/>
-    <ResturantCard data={data[1]}/>
-    <ResturantCard data={data[2]}/>
-    <ResturantCard data={data[3]}/>
-    <ResturantCard data={data[4]}/>
-    <ResturantCard data={data[5]}/>
+ {/* restaurant is array of data is mapping with the restutant array  * in Resturant card there are the data of the resturant which isnmapping with the  */} 
+ {/* returant_list is map with the function callback function */}
+    {returant_list.map((object)=>{
+        return <ResturantCard {...object.data} key={object.data.id}/>
+    })}
+
+    {/* Using Destructing */}
+
+    {/* <ResturantCard {...returant[0].data}/>
+    <ResturantCard  {...returant[1].data}/>
+    <ResturantCard  {...returant[2].data}/>
+    <ResturantCard  {...returant[3].data}/>
+    <ResturantCard  {...returant[4].data}/>
+    <ResturantCard  {...returant[5].data}/> */}
 </div>    );
 }
 
