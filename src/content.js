@@ -1,10 +1,10 @@
 // All the Harded Coded data in Config File
 // Name export
-export  const IMG_CDN="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
+export  const IMG_CDN="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
 
 
-export const Resturant_list=[
+export const resturant_list=[
     {
         "type": "restaurant",
         "data": {
@@ -1145,4 +1145,4 @@ export const Resturant_list=[
       },
     
 
-    ]
+    ];
